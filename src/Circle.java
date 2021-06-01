@@ -1,9 +1,8 @@
 import java.util.HashSet;
 
 public class Circle extends Shape {
-    public Circle(int[] pos, int radius) {
-        this.x = pos[0];
-        this.y = pos[1];
+    public Circle(int[] position, int radius) {
+        this.pos = position;
         HashSet<int[]> pointSet = new HashSet<int[]>();
         for (int y=0; y<radius; y++) {
             for (int x=0; x<radius; x++) {

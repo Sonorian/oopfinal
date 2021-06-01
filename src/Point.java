@@ -1,7 +1,6 @@
 public class Point extends Shape{
-    Point(int x, int y) {
-        this.x = x;
-        this.y = y;
+    Point(int[] position) {
+        this.pos = position;
         this.points = new int[][] {{0, 0}};
     }
 }

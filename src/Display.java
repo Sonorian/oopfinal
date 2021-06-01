@@ -51,7 +51,7 @@ public class Display {
 
     public final void setShape(Shape shape) {
         for (int[] p : shape.points) {
-            this.setCell(new int[] {shape.x+p[0], shape.y+p[1]});
+            this.setCell(new int[] {shape.pos[0]+p[0], shape.pos[1]+p[1]});
         }
     }
 
