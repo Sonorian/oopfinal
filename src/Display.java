@@ -1,12 +1,14 @@
 public class Display {
     public char[][] plane;
     public char fill;
-    public static int width = 99;
-    public static int height = 14;
-    private static final Display DISPLAY = new Display(width, height);
+    public int width;
+    public int height;
+    private static final Display DISPLAY = new Display();
 
-    protected Display(int x, int y) {
-        this.plane = new char[y][x];
+    protected Display() {
+        this.width = 100;
+        this.height = 14;
+        this.plane = new char[this.height][this.width];
         this.fill = ' ';
     }
 
@@ -24,6 +26,8 @@ public class Display {
 
     public final void setDimensions(int width, int height) {
         this.plane = new char[height][width];
+        this.width = width;
+        this.height = height;
     }
 
     public final void setFill(char fillCharacter) {
@@ -38,8 +42,8 @@ public class Display {
     }
 
     public final void setBackground() {
-        for(int y=0; y<Display.height; y++) {
-            for(int x=0; x<Display.width; x++) {
+        for(int y=0; y<this.height; y++) {
+            for(int x=0; x<this.width; x++) {
                 this.setCell(new int[] {x,y});
             }
         }
@@ -52,7 +56,7 @@ public class Display {
     }
 
     public final void printPlane() {
-        for (int line=Display.height-1; line>=0; line--) {
+        for (int line=this.height-1; line>=0; line--) {
             System.out.println(this.plane[line]);
         }
     }
