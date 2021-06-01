@@ -1,9 +1,11 @@
 public final class Program{
     public final Display display;
+    private final EditCode code;
     private static final Program PROGRAM = new Program();
 
     private Program() {
         this.display = Display.getDisplay();
+        this.code = EditCode.getCode();
     }
 
     public static final Program getProgram() {
@@ -11,12 +13,12 @@ public final class Program{
     }
 
     public final void setup() {
-        EditCode.setup(this.display);
+        this.code.setup(this.display);
     }
 
     public final void run() {
         for (int i=0; i<EditCode.cycles; i++) {
-            EditCode.cycle(this.display);
+            this.code.cycle(this.display);
             this.display.printPlane();
             try {
                 Thread.sleep(EditCode.frameDelay);
