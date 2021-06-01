@@ -9,8 +9,6 @@ public final class EditCode {
     }
 
     // Declare your own fields and methods here
-    private final Point testPoint = new Point(2,2);
-    private final Line edgeLine = new Line(new int[] {0,Display.height-1}, new int[] {Display.width, Display.height-1});
 
     public final void setup(Display display) {
         /**
@@ -29,12 +27,5 @@ public final class EditCode {
          *  display.setBackground;
          * somewhere near the start to reset the background each loop
          */
-        display.setFill('*');
-        display.setBackground();
-        display.setFill('-');
-        display.setShape(this.edgeLine);
-        display.setFill('0');
-        display.setShape(this.testPoint);
-        this.testPoint.x += 1;
     }
 }
