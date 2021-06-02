@@ -1,14 +1,19 @@
 public final class EditCode {
     private static final EditCode CODE = new EditCode();
-    public static final int cycles = 50; // number of cycles to run the program for
-    public static final int frameDelay = 200; // time between frames in milliseconds
+    public final int cycles; // number of cycles to run the program for
+    public final int frameDelay; // time between frames in milliseconds
 
-    private EditCode() {}
+    private EditCode() {
+        this.cycles = 2;
+        this.frameDelay = 200;
+    }
     public static final EditCode getCode() {
         return EditCode.CODE;
     }
 
     // Declare your own fields and methods here
+    Mover movePoint;
+    CombinedShape border;
 
     public final void setup(Display display) {
         /**

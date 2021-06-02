@@ -17,11 +17,11 @@ public final class Program{
     }
 
     public final void run() {
-        for (int i=0; i<EditCode.cycles; i++) {
+        for (int i=0; i<this.code.cycles; i++) {
             this.code.cycle(this.display);
             this.display.printPlane();
             try {
-                Thread.sleep(EditCode.frameDelay);
+                Thread.sleep(this.code.frameDelay);
             }
             catch (InterruptedException e) {
                 System.out.println("Thread Interrupted");
