@@ -9,7 +9,7 @@ public abstract class Utils {
         int y0 = point1[1];
         int xRange = point2[0]-x0;
         int yRange = point2[1]-y0;
-        ArrayList<int[]> line = new ArrayList<int[]>(xRange+1);
+        ArrayList<int[]> line = new ArrayList<int[]>(Math.abs(xRange));
         if (xRange == 0) {
             line.add(point1);
             return line;
