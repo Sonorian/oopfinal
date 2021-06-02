@@ -4,24 +4,21 @@ public class Display {
     public int width;
     public int height;
     private static final Display DISPLAY = new Display();
+    private static CombinedShape BORDER = new CombinedShape(Display.makeBorderLines());
 
     protected Display() {
-        this.width = 100;
-        this.height = 14;
+        this.width = 5;
+        this.height = 5;
         this.plane = new char[this.height][this.width];
         this.fill = ' ';
     }
 
-    public void debug() {
-        System.out.println(this.plane.length);
-        System.out.println(this.plane[0].length);
-        System.out.println(this.fill);
-        System.out.println(this.plane[0][0]);
-        System.out.println(this.plane[0]);
-    }
-
     public static final Display getDisplay() {
         return Display.DISPLAY;
+    }
+
+    public static final CombinedShape getBorder() {
+        return Display.BORDER;
     }
 
     public final void setDimensions(int width, int height) {
@@ -59,5 +56,16 @@ public class Display {
         for (int line=this.height-1; line>=0; line--) {
             System.out.println(this.plane[line]);
         }
+    }
+
+    private static final Shape[] makeBorderLines() {
+        int[] cornerBL = new int[] {0,0};
+        int[] cornerTL = new int[] {0,Display.DISPLAY.height-1};
+        int[] cornerTR = new int[] {Display.DISPLAY.width-1,Display.DISPLAY.height-1};
+        int[] cornerBR = new int[] {Display.DISPLAY.width-1, 0};
+        return new Shape[] {new Line(cornerBL, cornerTL),
+                            new Line(cornerTL, cornerTR),
+                            new Line(cornerTR, cornerBR),
+                            new Line(cornerBR, cornerBL)};
     }
 }
