@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Arrays;
 
 public abstract class Utils {
     public static final ArrayList<int[]> lineBetween(int[] point1, int[] point2) {
@@ -83,7 +84,7 @@ public abstract class Utils {
 
     public static final void printPoints(HashSet<int[]> points) {
         for (int[] point  : points) {
-            System.out.println(point.toString());
+            System.out.println(Arrays.toString(point));
         }
     }
 }
