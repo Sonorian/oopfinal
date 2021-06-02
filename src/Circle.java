@@ -8,12 +8,12 @@ public class Circle extends Shape {
             for (int x=0; x<radius; x++) {
                 if (x*x+y*y<=radius*radius) {
                     pointSet.add(new int[] {x,y});
-                    //pointSet.add(new int[] {-x,y});
-                    //pointSet.add(new int[] {-x,-y});
-                    //pointSet.add(new int[] {x,-y});
+                    pointSet.add(new int[] {-x,y});
+                    pointSet.add(new int[] {-x,-y});
+                    pointSet.add(new int[] {x,-y});
                 }
             }
         }
-        this.points = pointSet.toArray(new int[0][0]);
+        this.points = pointSet;
     }
 }

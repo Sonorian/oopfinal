@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Line extends Shape {
     public Line(int[] point1, int[] point2) {
@@ -9,11 +9,10 @@ public class Line extends Shape {
             //If slope is steeper than 1, make the line a function of y
             relativePoint = Utils.reversePoint(relativePoint);
         }
-        int[][] pointsBetween = Utils.lineBetween(new int[] {0,0}, relativePoint);
-        this.points = Arrays.copyOf(pointsBetween, pointsBetween.length+1);
-        this.points[pointsBetween.length] = relativePoint;
+        ArrayList<int[]> pointsBetween = Utils.lineBetween(new int[] {0,0}, relativePoint);
+        this.points.addAll(pointsBetween);
         if (diffXY > 0) {
-            this.points = Utils.reverseArray(this.points);
+            this.points = Utils.reversePoints(this.points);
         }
     }
 }

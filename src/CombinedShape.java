@@ -12,7 +12,7 @@ public class CombinedShape extends Shape{
                 pointSet.add(new int[] {relativeX, relativeY});
             }
         }
-        this.points = pointSet.toArray(new int[1][2]);
+        this.points = pointSet;
     }
     
 }
