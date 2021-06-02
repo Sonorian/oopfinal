@@ -4,11 +4,10 @@ public class Display {
     public int width;
     public int height;
     private static final Display displayInstance = new Display();
-    private static CombinedShape borderInstance = new CombinedShape(Display.makeBorderLines());
 
     protected Display() {
-        this.width = 5;
-        this.height = 5;
+        this.width = 100;
+        this.height = 14;
         this.plane = new char[this.height][this.width];
         this.fill = ' ';
     }
@@ -18,7 +17,7 @@ public class Display {
     }
 
     public final CombinedShape getBorder() {
-        return Display.borderInstance;
+        return new CombinedShape(Display.makeBorderLines());
     }
 
     public final void setDimensions(int width, int height) {
