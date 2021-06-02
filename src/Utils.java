@@ -5,6 +5,9 @@ import java.util.Arrays;
 
 public abstract class Utils {
     public static final ArrayList<int[]> lineBetween(int[] point1, int[] point2) {
+        System.out.println("New Line");
+        System.out.println(Arrays.toString(point1));
+        System.out.println(Arrays.toString(point2));
         int x0 = point1[0];
         int y0 = point1[1];
         int xRange = point2[0] - x0;
@@ -18,10 +21,12 @@ public abstract class Utils {
         int sign = xRange/Math.abs(xRange);
         for (int i=0; i<Math.abs(xRange); i++) {
             int x = x0 + i*sign;
-            float y = y0 + x*slope;
+            float y = y0 + i*sign*slope;
             int[] point = new int[] {Math.round(x), Math.round(y)};
             line.add(point);
         }
+        System.out.println("Points");
+        Utils.printPoints(new HashSet<int[]>(line));
         return line;
     }
 
