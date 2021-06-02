@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public abstract class Polygon extends Shape {
     protected static ArrayList<int[]> makeBorder(int[][] vertices) {
@@ -9,5 +10,10 @@ public abstract class Polygon extends Shape {
             prev = point;
         }
         return border;
+    }
+    
+    protected static HashSet<int[]> makeShape(int[][] vertices) {
+        ArrayList<int[]> border = Polygon.makeBorder(vertices);
+        return Utils.fillBorder(border);
     }
 }
