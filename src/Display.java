@@ -3,8 +3,8 @@ public class Display {
     public char fill;
     public int width;
     public int height;
-    private static final Display DISPLAY = new Display();
-    private static CombinedShape BORDER = new CombinedShape(Display.makeBorderLines());
+    private static final Display displayInstance = new Display();
+    private static CombinedShape borderInstance = new CombinedShape(Display.makeBorderLines());
 
     protected Display() {
         this.width = 5;
@@ -14,11 +14,11 @@ public class Display {
     }
 
     public static final Display getDisplay() {
-        return Display.DISPLAY;
+        return Display.displayInstance;
     }
 
     public final CombinedShape getBorder() {
-        return Display.BORDER;
+        return Display.borderInstance;
     }
 
     public final void setDimensions(int width, int height) {
@@ -60,9 +60,9 @@ public class Display {
 
     private static final Shape[] makeBorderLines() {
         int[] cornerBL = new int[] {0,0};
-        int[] cornerTL = new int[] {0,Display.DISPLAY.height-1};
-        int[] cornerTR = new int[] {Display.DISPLAY.width-1,Display.DISPLAY.height-1};
-        int[] cornerBR = new int[] {Display.DISPLAY.width-1, 0};
+        int[] cornerTL = new int[] {0,Display.displayInstance.height-1};
+        int[] cornerTR = new int[] {Display.displayInstance.width-1,Display.displayInstance.height-1};
+        int[] cornerBR = new int[] {Display.displayInstance.width-1, 0};
         return new Shape[] {new Line(cornerBL, cornerTL),
                             new Line(cornerTL, cornerTR),
                             new Line(cornerTR, cornerBR),
