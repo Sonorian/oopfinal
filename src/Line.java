@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Line extends Shape {
     public Line(int[] point1, int[] point2) {
@@ -10,7 +11,7 @@ public class Line extends Shape {
             relativePoint = Utils.reversePoint(relativePoint);
         }
         ArrayList<int[]> pointsBetween = Utils.lineBetween(new int[] {0,0}, relativePoint);
-        this.points.addAll(pointsBetween);
+        this.points = new HashSet<int[]>(pointsBetween);
         if (diffXY > 0) {
             this.points = Utils.reversePoints(this.points);
         }
