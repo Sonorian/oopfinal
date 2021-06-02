@@ -4,7 +4,7 @@ public final class EditCode {
     public final int frameDelay; // time between frames in milliseconds
 
     private EditCode() {
-        this.cycles = 2;
+        this.cycles = 30;
         this.frameDelay = 200;
     }
 
@@ -13,6 +13,7 @@ public final class EditCode {
     }
 
     // Declare your own fields and methods here
+    CustomPolygon poly;
 
     public final void setup(Display display) {
         /**
