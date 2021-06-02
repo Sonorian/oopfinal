@@ -17,7 +17,7 @@ public class Display {
         return Display.DISPLAY;
     }
 
-    public static final CombinedShape getBorder() {
+    public final CombinedShape getBorder() {
         return Display.BORDER;
     }
 
