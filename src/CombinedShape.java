@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-/** A {@link Shape} consisting of multiple other Shapes. */
+/** A Shape consisting of multiple other Shapes. */
 public class CombinedShape extends Shape{
     /** Empty constructor so child classes work. */
     protected CombinedShape() {}
@@ -19,7 +19,7 @@ public class CombinedShape extends Shape{
      * 
      * <p>All added points are relative to this shape's position.
      * 
-     * @param shape shape to be added
+     * @param shape {@link Shape} to be added
      */
     public final void addShape(Shape shape) {
         int relativeX = shape.pos[0] - this.pos[0];
@@ -30,7 +30,11 @@ public class CombinedShape extends Shape{
             }
     }
 
-    /** Removes the points of another shape from this shape. */
+    /**
+     * Removes the points of another shape from this shape. 
+     * 
+     * @param shape {@link Shape} to remove
+     */
     public final void removeShape(Shape shape) {
         int relativeX = shape.pos[0] - this.pos[0];
             int relativeY = shape.pos[1] - this.pos[1];

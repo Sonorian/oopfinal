@@ -7,8 +7,8 @@ import java.util.Arrays;
  * Class with useful random methods. 
  * 
  * <p>Note to self: 
- * <p>Maybe make into an interface with default methods? 
- * <p>Maybe move them to {@link Shape}? 
+ * <br>Maybe make into an interface with default methods? 
+ * <br>Maybe move methods to {@link Shape} and make protected? 
  * I mean shapes are the only ones that use them atm 
  * (except for printPoints, but that can be worked around, 
  * and nothing uses it anymore, anyways.) 
@@ -20,8 +20,10 @@ public abstract class Utils {
      * <p>Has exactly one point for every x coordinate. 
      * Does not include the ending point. 
      * 
-     * @param point1
-     * @param point2
+     * @see #straightLine(int[], int[])
+     * 
+     * @param point1 starting point
+     * @param point2 ending point
      * @return
      */
     public static final ArrayList<int[]> lineBetween(int[] point1, int[] point2) {
@@ -48,6 +50,8 @@ public abstract class Utils {
     /**
      * Returns an ArrayList of the points on a vertical line.
      * 
+     * @see #lineBetween(int[], int[])
+     * 
      * @param point1 starting point
      * @param point2 point with y coordinate to end by
      * @return list of points on the vertical line
@@ -65,21 +69,21 @@ public abstract class Utils {
     /**
      * Reverses a point's coordinates.
      * 
-     * <p>For example, (x,y) becomes (y,x).
+     * <p>For example, (x,y) becomes (y,x). 
+     * 
+     * @see #reversePoints(HashSet)
      * 
      * @param point 2D point
      * @return reversed point
      */
     public static final int[] reversePoint(int[] point) {
-        int x = point[0];
-        int y = point[1];
-        return new int[] {y, x};
+        return new int[] {point[1], point[0]};
     }
 
     /**
      * Reverses the points of a HashSet.
      * 
-     * @see Utils.reversePoint
+     * @see #reversePoint(int[])
      * 
      * @param points set of points
      * @return set of reversed points
@@ -96,7 +100,7 @@ public abstract class Utils {
      * Duplicates some vertices of a border.
      * 
      * <p>The duplicated vertices are adjacent to two points with the same x coordinate.
-     * Required for {@link Utils.fillBorder} to work properly for more complex shapes. 
+     * Required for {@link #fillBorder(ArrayList)} to work properly for more complex shapes. 
      * 
      * @param border list of points on a border
      * @return border with duplicated vertices
@@ -119,7 +123,9 @@ public abstract class Utils {
     /**
      * Finds all points within a border.
      * 
-     * <p> The border must be ordered sequentially.
+     * <p>The border must be ordered sequentially. 
+     * 
+     * @see Polygon#makeBorder(int[][])
      * 
      * @param border list of points on a border
      * @return set of points within and including the border
@@ -143,7 +149,10 @@ public abstract class Utils {
 
     /**
      * Prints each point in a set, separated by newlines.
-     * Used for debugging. 
+     * 
+     * <p>Used for debugging. 
+     * 
+     * @param points points to print
      */
     public static final void printPoints(HashSet<int[]> points) {
         for (int[] point  : points) {

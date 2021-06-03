@@ -6,6 +6,8 @@ public class Line extends Shape {
     /**
      * Creates a Line.
      * 
+     * @see Utils#lineBetween(int[], int[])
+     * 
      * @param point1 the starting point
      * @param point2 the ending point
      */

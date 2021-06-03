@@ -1,4 +1,7 @@
-/** A ShapeUpdater that moves. */
+/** A ShapeUpdater that moves. 
+ * 
+ * @see Shape
+*/
 public class Mover extends ShapeUpdater {
     int[] velocity;
 

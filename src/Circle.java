@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-/** A {@link Shape} that kinda looks like a circle. */
+/** A Shape that kinda looks like a circle. */
 public class Circle extends Shape {
     /**
      * Makes a Circle.

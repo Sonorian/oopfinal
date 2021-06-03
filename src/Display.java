@@ -4,10 +4,15 @@
  * <p>Everything that changes what is displayed is a method of this class.
  */
 public class Display {
+    /** The characters to be printed. */
     public char[][] plane;
+    /** The character to write to the plane. */
     public char fill;
+    /** The width of the plane. */
     public int width;
+    /** The height of the plane. */
     public int height;
+    /** The Display instance */
     private static final Display displayInstance = new Display();
 
     /** Makes the Display. */
@@ -23,7 +28,7 @@ public class Display {
         return Display.displayInstance;
     }
 
-    /** Returns a CombinedShape consisting of the edges of the plane */
+    /** Returns a CombinedShape consisting of the edges of the plane. */
     public final CombinedShape getBorder() {
         int[] cornerBL = new int[]
             {0, 0};
@@ -41,7 +46,12 @@ public class Display {
         return new CombinedShape(border);
     }
 
-    /** Modifies the width and height of the plane, and clears it. */
+    /**
+     * Modifies the width and height of the plane, and clears it.
+     * 
+     * @param width new width of the plane
+     * @param height new height of the plane
+     */
     public final void setDimensions(int width, int height) {
         this.plane = new char[height][width];
         this.width = width;
@@ -55,7 +65,7 @@ public class Display {
     /**
      * Changes one cell of the plane to the fill character.
      * 
-     * @param point x,y point to change
+     * @param point point on {@link Display#plane} to change
      */
     public final void setCell(int[] point) {
         try {
@@ -73,7 +83,10 @@ public class Display {
         }
     }
 
-    /** Sets a Shape to the fill character. */
+    /** Sets a Shape to the fill character. 
+     * 
+     * @param shape {@link Shape} to be added to {@link Display#plane}
+     */
     public final void setShape(Shape shape) {
         for (int[] p : shape.points) {
             this.setCell(new int[]

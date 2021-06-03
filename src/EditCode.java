@@ -18,7 +18,7 @@ public final class EditCode {
         return EditCode.codeInstance;
     }
 
-    /* DO NOT EDIT ANYTHING ABOVE THIS LINE */
+    /* !!! DO NOT EDIT ANYTHING ABOVE THIS LINE !!! */
 
     /* Declare your own things here. */
 
@@ -26,12 +26,14 @@ public final class EditCode {
      * User-generated code to run once. 
      * 
      * <p>Useful for setting things like
-     * {@link EditCode.cycles} (default 30 cycles), 
-     * {@link EditCode.frameDelay} (default 200 ms),
-     * {@link Display.setDimensions} (default 100*14),
+     * {@link EditCode#cycles} (default 30 cycles), 
+     * {@link EditCode#frameDelay} (default 200 ms),
+     * {@link Display#setDimensions(int, int)} (default 100*14),
      * or anything else to just run once.
      * 
-     * @see Program.setup
+     * @see Program#setup()
+     * 
+     * @param display {@link Display#getDisplay()}
      */
     public final void setup(Display display) {
         /* Your initializations here */
@@ -40,7 +42,9 @@ public final class EditCode {
     /** 
      * User-generated code to run each cycle.
      * 
-     * @see Program.run
+     * @see Program#run()
+     * 
+     * @param display {@link Display#getDisplay()}
      */
     public final void cycle(Display display) {
         /* Your instructions here */

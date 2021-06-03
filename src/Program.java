@@ -1,4 +1,8 @@
-/** Runs the user's code. */
+/** 
+ * Runs the user's code. 
+ * 
+ * @see EditCode
+*/
 public final class Program{
     public final Display display;
     private final EditCode code;
@@ -18,16 +22,16 @@ public final class Program{
     /** 
      * Runs the user's setup method.
      * 
-     * @see EditCode.setup
+     * @see EditCode#setup(Display)
      */
     public final void setup() {
         this.code.setup(this.display);
     }
 
     /** 
-     * Runs the user's cycle method.
+     * Repeatedly runs the user's cycle method.
      * 
-     * @see EditCode.cycle
+     * @see EditCode#cycle(Display)
      */
     public final void run() {
         for (int i = 0; i < this.code.cycles; i++) {
