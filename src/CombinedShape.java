@@ -1,22 +1,42 @@
 import java.util.HashSet;
 
+/** A {@link Shape} consisting of multiple other Shapes. */
 public class CombinedShape extends Shape{
+    /** Empty constructor so child classes work. */
+    protected CombinedShape() {}
+
+    /** Makes a CombinedShape. */
     public CombinedShape(Shape[] components) {
         this.pos = components[0].pos;
-        this.points = combineShapes(components);
+        this.points = new HashSet<int[]>();
+        for (Shape shape : components) {
+            addShape(shape);
+        }
     }
 
-    public static HashSet<int[]> combineShapes(Shape[] components) {
-        HashSet<int[]> outPoints = new HashSet<int[]>();
-        int[] position = components[0].pos;
-        for (Shape shape : components) {
-            int relativeX = shape.pos[0] - position[0];
-            int relativeY = shape.pos[1] - position[1];
+    /**
+     * Adds the points of another shape to this shape.
+     * 
+     * <p>All added points are relative to this shape's position.
+     * 
+     * @param shape shape to be added
+     */
+    public final void addShape(Shape shape) {
+        int relativeX = shape.pos[0] - this.pos[0];
+            int relativeY = shape.pos[1] - this.pos[1];
             for (int[] point : shape.points) {
-                outPoints.add(new int[]
+                this.points.add(new int[]
                     {relativeX + point[0], relativeY + point[1]});
             }
-        }
-        return outPoints;
+    }
+
+    /** Removes the points of another shape from this shape. */
+    public final void removeShape(Shape shape) {
+        int relativeX = shape.pos[0] - this.pos[0];
+            int relativeY = shape.pos[1] - this.pos[1];
+            for (int[] point : shape.points) {
+                this.points.remove(new int[]
+                    {relativeX + point[0], relativeY + point[1]});
+            }
     }
 }

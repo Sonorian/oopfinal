@@ -1,21 +1,34 @@
+/** Runs the user's code. */
 public final class Program{
     public final Display display;
     private final EditCode code;
     private static final Program programInstance = new Program();
 
+    /** Makes the Program instance. */
     private Program() {
         this.display = Display.getDisplay();
         this.code = EditCode.getCode();
     }
 
+    /** Returns the Program instance. */
     public static final Program getProgram() {
         return Program.programInstance;
     }
 
+    /** 
+     * Runs the user's setup method.
+     * 
+     * @see EditCode.setup
+     */
     public final void setup() {
         this.code.setup(this.display);
     }
 
+    /** 
+     * Runs the user's cycle method.
+     * 
+     * @see EditCode.cycle
+     */
     public final void run() {
         for (int i = 0; i < this.code.cycles; i++) {
             this.code.cycle(this.display);

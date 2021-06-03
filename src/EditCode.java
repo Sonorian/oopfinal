@@ -1,36 +1,48 @@
+/** User-editable code. */
 public final class EditCode {
+    /** EditCode singleton instance. */
     private static final EditCode codeInstance = new EditCode();
-    public final int cycles; // number of cycles to run the program for
-    public final int frameDelay; // time between frames in milliseconds
+    /** Number of cycles to run the program for. */
+    public final int cycles;
+    /** Time between frames in milliseconds. */
+    public final int frameDelay;
 
+    /** Makes the EditCode instance.*/
     private EditCode() {
         this.cycles = 30;
         this.frameDelay = 200;
     }
 
+    /** Returns the EditCode instance.*/
     public static final EditCode getCode() {
         return EditCode.codeInstance;
     }
 
-    // Declare your own fields and methods here
-    CustomPolygon poly;
+    /* DO NOT EDIT ANYTHING ABOVE THIS LINE */
 
+    /* Declare your own things here. */
+
+    /** 
+     * User-generated code to run once. 
+     * 
+     * <p>Useful for setting things like
+     * {@link EditCode.cycles} (default 30 cycles), 
+     * {@link EditCode.frameDelay} (default 200 ms),
+     * {@link Display.setDimensions} (default 100*14),
+     * or anything else to just run once.
+     * 
+     * @see Program.setup
+     */
     public final void setup(Display display) {
-        /**
-         * Your initializations here
-         * 
-         * Useful for things like display.setDimensions(width, height); (default is 100x14 characters)
-         */
+        /* Your initializations here */
     }
 
+    /** 
+     * User-generated code to run each cycle.
+     * 
+     * @see Program.run
+     */
     public final void cycle(Display display) {
-        /**
-         * Your instructions here
-         * 
-         * Generally, you'll want to have
-         *  display.setFill('background character');
-         *  display.setBackground;
-         * somewhere near the start to reset the background each loop
-         */
+        /* Your instructions here */
     }
 }

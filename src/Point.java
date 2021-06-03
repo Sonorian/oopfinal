@@ -1,6 +1,8 @@
 import java.util.HashSet;
 
+/** A Shape consisting of a single point. */
 public class Point extends Shape{
+    /** Makes a Point. */
     Point(int[] position) {
         this.pos = position;
         this.points = new HashSet<int[]>(1);

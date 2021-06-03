@@ -1,3 +1,4 @@
+/** Runs the program. */
 public class App {
     public static void main(String[] args) throws Exception {
         Program program = Program.getProgram();
