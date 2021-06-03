@@ -1,3 +1,5 @@
+package ascii_processing;
+
 /** A Polygon that's a rectangle */
 public class Rectangle extends Polygon {
     /** Empty constructor so child classes work. */

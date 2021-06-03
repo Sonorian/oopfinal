@@ -1,3 +1,5 @@
+package ascii_processing;
+
 /**
  * Singleton class for the contents of the screen.
  * 

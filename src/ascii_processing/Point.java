@@ -1,3 +1,5 @@
+package ascii_processing;
+
 import java.util.HashSet;
 
 /** A Shape consisting of a single point. */

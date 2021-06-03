@@ -1,3 +1,5 @@
+package ascii_processing;
+
 /** A Rectangle with equal height and width. */
 public class Square extends Rectangle {
     /**

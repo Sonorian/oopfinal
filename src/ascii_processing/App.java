@@ -1,3 +1,5 @@
+package ascii_processing;
+
 /** Runs the program. */
 public class App {
     public static void main(String[] args) throws Exception {

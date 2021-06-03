@@ -1,3 +1,5 @@
+package ascii_processing;
+
 /** User-editable code. */
 public final class EditCode {
     /** EditCode singleton instance. */

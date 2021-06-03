@@ -1,3 +1,5 @@
+package ascii_processing;
+
 /**
  * Simple base class for a persistent, changeable shape.
  * 

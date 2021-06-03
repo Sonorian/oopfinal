@@ -1,3 +1,5 @@
+package ascii_processing;
+
 import java.util.HashSet;
 
 /** A Shape that kinda looks like a circle. */

@@ -1,3 +1,5 @@
+package ascii_processing;
+
 /** A ShapeUpdater that moves. 
  * 
  * @see Shape
