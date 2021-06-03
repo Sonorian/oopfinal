@@ -3,12 +3,13 @@ package ascii_processing;
 import java.util.HashSet;
 
 /** 
- * CombinedShape consisting of the edges of the plane.
+ * A CompositeShape consisting of the edges of the plane.
  * 
+ * @see Line
  * @see Display#width
  * @see Display#height
  */
-public class Border extends CombinedShape {
+public class Border extends CompositeShape {
     /** Makes a Border. */
     public Border() {
         Display display = Display.getDisplay();
