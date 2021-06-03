@@ -17,9 +17,9 @@ public class Circle extends Shape {
      * Returns the set of all points in a circle of a specified radius (kind of).
      * 
      * <p>Checks all points from (0,0) to (radius-1, radius-1). 
-     * If x^2 + y^2 <= radius^2 it adds that point in each quadrant. 
+     * If x^2 + y^2 &lt;= radius^2 it adds that point in each quadrant. 
      * This results in a circle with a diameter of 2*radius-1, 
-     * which means the circle's radius != radius. // <-- fix this //
+     * which means the circle's radius != radius. // &lt;-- fix this //
      * 
      * @param radius radius of the circle + 0.5
      * @return set of points in the circle

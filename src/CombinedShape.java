@@ -5,7 +5,10 @@ public class CombinedShape extends Shape{
     /** Empty constructor so child classes work. */
     protected CombinedShape() {}
 
-    /** Makes a CombinedShape. */
+    /** Makes a CombinedShape. 
+     * 
+     * @param components {@link Shape}s that comprise this shape
+     */
     public CombinedShape(Shape[] components) {
         this.pos = components[0].pos;
         this.points = new HashSet<int[]>();

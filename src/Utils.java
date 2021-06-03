@@ -24,7 +24,7 @@ public abstract class Utils {
      * 
      * @param point1 starting point
      * @param point2 ending point
-     * @return
+     * @return the line between the points
      */
     public static final ArrayList<int[]> lineBetween(int[] point1, int[] point2) {
         int x0 = point1[0];
