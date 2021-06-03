@@ -3,15 +3,15 @@ package ascii_processing;
 import java.util.HashSet;
 
 /** A Shape consisting of multiple other Shapes. */
-public class CombinedShape extends Shape{
+public class CompositeShape extends Shape{
     /** Empty constructor so child classes work. */
-    protected CombinedShape() {}
+    protected CompositeShape() {}
 
-    /** Makes a CombinedShape. 
+    /** Makes a CompositeShape. 
      * 
      * @param components {@link Shape}s that comprise this shape
      */
-    public CombinedShape(Shape[] components) {
+    public CompositeShape(Shape[] components) {
         this.pos = components[0].pos;
         this.points = new HashSet<int[]>();
         for (Shape shape : components) {
@@ -78,9 +78,9 @@ public class CombinedShape extends Shape{
                 int[] relativePoint = new int[]
                     {relativeX + point[0], relativeY + point[1]};
                 if (this.points.contains(relativePoint) == false) {
-                    this.points.add(point);
+                    this.points.add(relativePoint);
                 } else {
-                    this.points.add(point);
+                    this.points.remove(relativePoint);
                 }
             }
     }
