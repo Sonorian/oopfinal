@@ -29,24 +29,6 @@ public class Display {
         return Display.displayInstance;
     }
 
-    /** Returns a CombinedShape consisting of the edges of the plane. */
-    public final CombinedShape getBorder() {
-        int[] cornerBL = new int[]
-            {0, 0};
-        int[] cornerTL = new int[]
-            {0, Display.displayInstance.height - 1};
-        int[] cornerTR = new int[]
-            {Display.displayInstance.width - 1, Display.displayInstance.height - 1};
-        int[] cornerBR = new int[]
-            {Display.displayInstance.width - 1, 0};
-        Shape[] border = new Shape[]
-            {new Line(cornerBL, cornerTL),
-             new Line(cornerTL, cornerTR),
-             new Line(cornerTR, cornerBR),
-             new Line(cornerBR, cornerBL)};
-        return new CombinedShape(border);
-    }
-
     /**
      * Modifies the width and height of the plane, and clears it.
      * 
