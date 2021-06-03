@@ -36,8 +36,8 @@ public final class EditCode {
 
     /* !!! DO NOT EDIT ANYTHING ABOVE THIS LINE !!! */
 
-    Border border;
-    Mover point;
+    Border border; // Uses Border and Mover via composition
+    Mover point;   // There are examples of this in the actual code too
 
     /** 
      * User-generated code to run once. 
