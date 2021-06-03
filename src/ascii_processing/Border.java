@@ -21,6 +21,7 @@ public class Border extends CombinedShape {
              new Line(cornerTL, cornerTR),
              new Line(cornerTR, cornerBR),
              new Line(cornerBR, cornerBL)};
+        this.pos = cornerBL;
         this.points = new HashSet<>(2*display.width + 2*display.height - 4);
         for (Shape line : border) {
             addShape(line);

@@ -5,9 +5,9 @@ public final class EditCode {
     /** EditCode singleton instance. */
     private static final EditCode codeInstance = new EditCode();
     /** Number of cycles to run the program for. */
-    public final int cycles;
+    public int cycles;
     /** Time between frames in milliseconds. */
-    public final int frameDelay;
+    public int frameDelay;
 
     /** Makes the EditCode instance.*/
     private EditCode() {

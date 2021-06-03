@@ -28,7 +28,7 @@ public class CombinedShape extends Shape{
      */
     public final void addShape(Shape shape) {
         int relativeX = shape.pos[0] - this.pos[0];
-            int relativeY = shape.pos[1] - this.pos[1];
+        int relativeY = shape.pos[1] - this.pos[1];
             for (int[] point : shape.points) {
                 this.points.add(new int[]
                     {relativeX + point[0], relativeY + point[1]});
