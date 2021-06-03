@@ -25,8 +25,7 @@ public class Display {
         this.fill = ' ';
     }
 
-    /** 
-     * Returns the Display instance. */
+    /** Returns the Display instance. */
     public static final Display getDisplay() {
         return Display.displayInstance;
     }
@@ -43,6 +42,11 @@ public class Display {
         this.height = height;
     }
 
+    /** 
+     * Sets the fill character.
+     * 
+     * @param fillCharacter new fill character
+     */
     public final void setFill(char fillCharacter) {
         this.fill = fillCharacter;
     }
