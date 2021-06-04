@@ -77,10 +77,12 @@ public abstract class Shape {
          * @return set of reversed points
          */
         protected final void reversePoints() {
+            HashSet<int[]> newPoints = new HashSet<int[]>(this.size());
             for (int[] point : this) {
-                this.add(Shape.reversePoint(point));
-                this.remove(point);
+                newPoints.add(Shape.reversePoint(point));
             }
+            this.clear();
+            this.addAll(newPoints);
     }
     
         /**
