@@ -14,7 +14,8 @@ public class Rectangle extends Polygon {
      */
     public Rectangle(int[] position, int width, int height) {
         this.pos = position;
-        this.points = Polygon.makeShape(Rectangle.makeVertices(width, height));
+        this.points = new RelativePoints();
+        makeShape(Rectangle.makeVertices(width, height));
     }
 
     /**

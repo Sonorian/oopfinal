@@ -1,7 +1,5 @@
 package ascii_processing;
 
-import java.util.HashSet;
-
 /** A Shape that kinda looks like a circle. */
 public class Circle extends Shape {
     /**
@@ -12,7 +10,8 @@ public class Circle extends Shape {
      */
     public Circle(int[] position, int radius) {
         this.pos = position;
-        this.points = Circle.makeShape(radius);
+        this.points = new RelativePoints();
+        makeShape(radius);
     }
 
     /**
@@ -24,20 +23,17 @@ public class Circle extends Shape {
      * which means the circle's radius != radius. // &lt;-- fix this //
      * 
      * @param radius radius of the circle + 0.5
-     * @return set of points in the circle
      */
-    protected static final HashSet<int[]> makeShape(int radius) {
-        HashSet<int[]> pointSet = new HashSet<int[]>();
+    protected final void makeShape(int radius) {
         for (int y = 0; y < radius; y++) {
             for (int x = 0; x < radius; x++) {
                 if (x*x + y*y <= radius*radius) {
-                    pointSet.add(new int[] {x, y});
-                    pointSet.add(new int[] {-x, y});
-                    pointSet.add(new int[] {-x, -y});
-                    pointSet.add(new int[] {x, -y});
+                    this.points.add(new int[] {x, y});
+                    this.points.add(new int[] {-x, y});
+                    this.points.add(new int[] {-x, -y});
+                    this.points.add(new int[] {x, -y});
                 }
             }
         }
-        return pointSet;
     }
 }

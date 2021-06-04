@@ -1,7 +1,5 @@
 package ascii_processing;
 
-import java.util.HashSet;
-
 /** A Shape consisting of multiple other Shapes. */
 public class CompositeShape extends Shape{
     /** Empty constructor so child classes work. */
@@ -13,7 +11,7 @@ public class CompositeShape extends Shape{
      */
     public CompositeShape(Shape[] components) {
         this.pos = components[0].pos;
-        this.points = new HashSet<int[]>();
+        this.points = new RelativePoints();
         for (Shape shape : components) {
             addShape(shape);
         }

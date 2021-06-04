@@ -1,7 +1,6 @@
 package ascii_processing;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 /** Abstract class for polygonal Shapes. */
 public abstract class Polygon extends Shape {
@@ -33,8 +32,8 @@ public abstract class Polygon extends Shape {
      * @param vertices sequential vertices of the polygon
      * @return set of points in the polygon
      */
-    protected static HashSet<int[]> makeShape(int[][] vertices) {
+    protected void makeShape(int[][] vertices) {
         ArrayList<int[]> border = Polygon.makeBorder(vertices);
-        return Utils.fillBorder(border);
+        fillBorder(border);
     }
 }
