@@ -51,7 +51,7 @@ public abstract class Shape {
         }
 
         /** 
-         * Makes an empty RelativePoints.
+         * Makes an empty RelativePoints with a specified initial capacity and load factor.
          * 
          * @see <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html#%3Cinit%3E(int,float)">java.util.HashSet&lt;E&gt;#init(int, float);</a>
          */
@@ -60,7 +60,7 @@ public abstract class Shape {
         }
         
         /** 
-         * Makes an empty RelativePoints.
+         * Makes a RelativePoints that extends another Collection.
          * 
          * @see <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html#%3Cinit%3E(java.util.Collection)">java.util.HashSet&lt;E&gt;#init(Collection&lt;? extends E&gt;);</a>
          */
