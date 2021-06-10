@@ -19,6 +19,7 @@ public class CustomPolygon extends Polygon {
             relativeVertices[i] = new int[] {vertex[0] - this.pos[0], vertex[1] - pos[1]};
         }
         ArrayList<int[]> border = Polygon.makeBorder(relativeVertices);
-        this.points = Utils.fillBorder(border);
+        this.points = new RelativePoints();
+        fillBorder(border);
     }
 }

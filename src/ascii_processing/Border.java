@@ -1,14 +1,13 @@
 package ascii_processing;
 
-import java.util.HashSet;
-
 /** 
- * CombinedShape consisting of the edges of the plane.
+ * A CompositeShape consisting of the edges of the plane.
  * 
+ * @see Line
  * @see Display#width
  * @see Display#height
  */
-public class Border extends CombinedShape {
+public class Border extends CompositeShape {
     /** Makes a Border. */
     public Border() {
         Display display = Display.getDisplay();
@@ -22,7 +21,7 @@ public class Border extends CombinedShape {
              new Line(cornerTR, cornerBR),
              new Line(cornerBR, cornerBL)};
         this.pos = cornerBL;
-        this.points = new HashSet<>(2*display.width + 2*display.height - 4);
+        this.points = new RelativePoints(2*display.width + 2*display.height - 4);
         for (Shape line : border) {
             addShape(line);
         }
