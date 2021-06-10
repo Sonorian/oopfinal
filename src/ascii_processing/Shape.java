@@ -82,9 +82,6 @@ public abstract class Shape {
          * Reverses its points. 
          * 
          * @see Shape#reversePoint(int[])
-         * 
-         * @param points set of points
-         * @return set of reversed points
          */
         protected final void reversePoints() {
             HashSet<int[]> newPoints = new HashSet<int[]>(this.size());
