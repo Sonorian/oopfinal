@@ -4,7 +4,7 @@ package ascii_processing;
  * Runs the user's code. 
  * 
  * @see EditCode
-*/
+ */
 public final class Program{
     public final Display display;
     private final EditCode code;
@@ -16,7 +16,11 @@ public final class Program{
         this.code = EditCode.getCode();
     }
 
-    /** Returns the Program instance. */
+    /** 
+     * Returns the Program instance.
+     * 
+     * @return the Program instance
+     */
     public static final Program getProgram() {
         return Program.programInstance;
     }

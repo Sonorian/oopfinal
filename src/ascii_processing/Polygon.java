@@ -9,7 +9,7 @@ public abstract class Polygon extends Shape {
      * 
      * <p>Each segment has exactly one point for each x coordinate.
      * 
-     * @see Utils#lineBetween(int[], int[])
+     * @see Shape#lineBetween(int[], int[])
      * 
      * @param vertices sequential vertices of the polygon
      * @return list of points of the border of the polygon
@@ -18,7 +18,7 @@ public abstract class Polygon extends Shape {
         ArrayList<int[]> border = new ArrayList<int[]>();
         int[] prev = vertices[vertices.length - 1];
         for (int[] point : vertices) {
-            border.addAll(Utils.lineBetween(prev, point));
+            border.addAll(Shape.lineBetween(prev, point));
             prev = point;
         }
         return border;
@@ -27,10 +27,9 @@ public abstract class Polygon extends Shape {
     /**
      * Finds the points in a polygon from an array of vertices.
      * 
-     * @see Utils#fillBorder(ArrayList)
+     * @see Shape#fillBorder(ArrayList)
      * 
      * @param vertices sequential vertices of the polygon
-     * @return set of points in the polygon
      */
     protected void makeShape(int[][] vertices) {
         ArrayList<int[]> border = Polygon.makeBorder(vertices);

@@ -6,7 +6,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Arrays;
 
-/** Shape base class. */
+/** 
+ * Shape base class.
+ * 
+ * <p>Also contains classes and methods used for constructing shapes. 
+ */
 public abstract class Shape {
     /** Position of the shape.
      * 
@@ -25,7 +29,8 @@ public abstract class Shape {
         this.pos = newPosition;
     }
 
-    /** A Shape's x,y points. 
+    /** 
+     * A Shape's x,y points. 
      * 
      * @see <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html">java.util.HashSet&lt;E&gt;</a>
      */
@@ -54,6 +59,9 @@ public abstract class Shape {
          * Makes an empty RelativePoints with a specified initial capacity and load factor.
          * 
          * @see <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html#%3Cinit%3E(int,float)">java.util.HashSet&lt;E&gt;#init(int, float);</a>
+         * 
+         * @param initialCapacity the initial capacity of the hash table
+         * @param loadFactor something that determines when the capacity of the set doubles
          */
         public RelativePoints(int initialCapacity, float loadFactor) {
             super(initialCapacity, loadFactor);
@@ -63,6 +71,8 @@ public abstract class Shape {
          * Makes a RelativePoints that extends another Collection.
          * 
          * @see <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html#%3Cinit%3E(java.util.Collection)">java.util.HashSet&lt;E&gt;#init(Collection&lt;? extends E&gt;);</a>
+         * 
+         * @param c the collection to convert into a RelativePoints
          */
         public RelativePoints(Collection<int[]> c) {
             super(c);
@@ -72,9 +82,6 @@ public abstract class Shape {
          * Reverses its points. 
          * 
          * @see Shape#reversePoint(int[])
-         * 
-         * @param points set of points
-         * @return set of reversed points
          */
         protected final void reversePoints() {
             HashSet<int[]> newPoints = new HashSet<int[]>(this.size());
@@ -83,7 +90,7 @@ public abstract class Shape {
             }
             this.clear();
             this.addAll(newPoints);
-    }
+        }
     
         /**
          * Prints each point within, separated by newlines.
@@ -154,7 +161,7 @@ public abstract class Shape {
      * 
      * <p>For example, (x,y) becomes (y,x). 
      * 
-     * @see #reversePoints(HashSet)
+     * @see RelativePoints#reversePoints()
      * 
      * @param point 2D point
      * @return reversed point
@@ -195,7 +202,6 @@ public abstract class Shape {
      * @see Polygon#makeBorder(int[][])
      * 
      * @param border list of points on a border
-     * @return set of points within and including the border
      */
     protected final void fillBorder(ArrayList<int[]> border) {
         ArrayList<int[]> borderFixed = Shape.duplicateVertices(border);

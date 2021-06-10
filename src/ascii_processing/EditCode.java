@@ -15,7 +15,11 @@ public final class EditCode {
         this.frameDelay = 200;
     }
 
-    /** Returns the EditCode instance.*/
+    /** 
+     * Returns the EditCode instance.
+     * 
+     * @return the EditCode instance
+     */
     public static final EditCode getCode() {
         return EditCode.codeInstance;
     }
