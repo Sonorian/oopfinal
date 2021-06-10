@@ -4,7 +4,7 @@ package ascii_processing;
  * Runs the user's code. 
  * 
  * @see EditCode
-*/
+ */
 public final class Program{
     public final Display display;
     private final EditCode code;

@@ -18,7 +18,7 @@ public abstract class Polygon extends Shape {
         ArrayList<int[]> border = new ArrayList<int[]>();
         int[] prev = vertices[vertices.length - 1];
         for (int[] point : vertices) {
-            border.addAll(Utils.lineBetween(prev, point));
+            border.addAll(Shape.lineBetween(prev, point));
             prev = point;
         }
         return border;
