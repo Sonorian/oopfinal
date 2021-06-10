@@ -25,7 +25,11 @@ public class Display {
         this.fill = ' ';
     }
 
-    /** Returns the Display instance. */
+    /** 
+     * Returns the Display instance.
+     * 
+     * @return the Display instance
+     */
     public static final Display getDisplay() {
         return Display.displayInstance;
     }

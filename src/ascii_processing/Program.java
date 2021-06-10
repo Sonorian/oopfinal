@@ -16,7 +16,11 @@ public final class Program{
         this.code = EditCode.getCode();
     }
 
-    /** Returns the Program instance. */
+    /** 
+     * Returns the Program instance.
+     * 
+     * @return the Program instance
+     */
     public static final Program getProgram() {
         return Program.programInstance;
     }

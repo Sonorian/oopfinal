@@ -30,7 +30,6 @@ public abstract class Polygon extends Shape {
      * @see Shape#fillBorder(ArrayList)
      * 
      * @param vertices sequential vertices of the polygon
-     * @return set of points in the polygon
      */
     protected void makeShape(int[][] vertices) {
         ArrayList<int[]> border = Polygon.makeBorder(vertices);
