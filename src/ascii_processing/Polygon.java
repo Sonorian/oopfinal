@@ -9,7 +9,7 @@ public abstract class Polygon extends Shape {
      * 
      * <p>Each segment has exactly one point for each x coordinate.
      * 
-     * @see Utils#lineBetween(int[], int[])
+     * @see Shape#lineBetween(int[], int[])
      * 
      * @param vertices sequential vertices of the polygon
      * @return list of points of the border of the polygon
@@ -27,7 +27,7 @@ public abstract class Polygon extends Shape {
     /**
      * Finds the points in a polygon from an array of vertices.
      * 
-     * @see Utils#fillBorder(ArrayList)
+     * @see Shape#fillBorder(ArrayList)
      * 
      * @param vertices sequential vertices of the polygon
      * @return set of points in the polygon

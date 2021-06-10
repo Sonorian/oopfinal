@@ -93,7 +93,7 @@ public abstract class Shape {
             }
             this.clear();
             this.addAll(newPoints);
-    }
+        }
     
         /**
          * Prints each point within, separated by newlines.
@@ -164,7 +164,7 @@ public abstract class Shape {
      * 
      * <p>For example, (x,y) becomes (y,x). 
      * 
-     * @see #reversePoints(HashSet)
+     * @see RelativePoints#reversePoints()
      * 
      * @param point 2D point
      * @return reversed point
@@ -205,7 +205,6 @@ public abstract class Shape {
      * @see Polygon#makeBorder(int[][])
      * 
      * @param border list of points on a border
-     * @return set of points within and including the border
      */
     protected final void fillBorder(ArrayList<int[]> border) {
         ArrayList<int[]> borderFixed = Shape.duplicateVertices(border);
